@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>Generic Data retrival</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZHR_USERINFOTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZHR_USERINFO</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZHR_GET_MANAGER</FUNCNAME>
+     <SHORT_TEXT>Get Manager from Global HR</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IMP_USERNAME</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>USERNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IMP_PERNR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>PERNR_D</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EXP_MANAGER_USER</PARAMETER>
+       <TYP>USERNAME</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EXP_MANAGER_NUM</PARAMETER>
+       <TYP>PERNR_D</TYP>
+      </RSEXP>
+     </EXPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>NOBODY_FOUND</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>NO_MANAGER_FOUND</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>NO_DATA_SUPPLIED</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IMP_USERNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User name</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IMP_PERNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Personnel Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EXP_MANAGER_USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>User name</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EXP_MANAGER_NUM</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Personnel Number</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NOBODY_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>User does not exist or is out of validity</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_MANAGER_FOUND</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>No Manager found for this user</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>NO_DATA_SUPPLIED</PARAMETER>
+       <KIND>X</KIND>
+       <STEXT>Please supply Username or Personnel Number</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
